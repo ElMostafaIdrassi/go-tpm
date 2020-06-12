@@ -89,10 +89,10 @@ type Permission uint32
 // NV Permissions and Operations
 // Note: Permissions are summable
 const (
-	NVPerPPWrite    permission = 0x00000001
-	NVPerOwnerWrite permission = 0x00000002
-	NVPerAuthWrite  permission = 0x00000004
-	NVPerWriteAll   permission = 0x00000800
+	NVPerPPWrite    Permission = 0x00000001
+	NVPerOwnerWrite Permission = 0x00000002
+	NVPerAuthWrite  Permission = 0x00000004
+	NVPerWriteAll   Permission = 0x00000800
 	// Warning: The Value 0x00001000 is
 	// defined in the spec as
 	// TPM_NV_PER_WRITEDEFINE, but it is
@@ -103,16 +103,16 @@ const (
 	// be undone in any way. Do not use
 	// this value unless you know what
 	// you're doing!
-	NVPerWriteSTClear permission = 0x00002000
-	NVPerGlobalLock   permission = 0x00004000
-	NVPerPPRead       permission = 0x00008000
-	NVPerOwnerRead    permission = 0x00100000
-	NVPerAuthRead     permission = 0x00200000
-	NVPerReadSTClear  permission = 0x80000000
+	NVPerWriteSTClear Permission = 0x00002000
+	NVPerGlobalLock   Permission = 0x00004000
+	NVPerPPRead       Permission = 0x00008000
+	NVPerOwnerRead    Permission = 0x00100000
+	NVPerAuthRead     Permission = 0x00200000
+	NVPerReadSTClear  Permission = 0x80000000
 )
 
 // permMap : Map of TPM_NV_Permissions to its strings for convenience
-var permMap = map[permission]string{
+var permMap = map[Permission]string{
 	NVPerPPWrite:      "PPWrite",
 	NVPerOwnerWrite:   "OwnerWrite",
 	NVPerAuthWrite:    "AuthWrite",
@@ -126,7 +126,7 @@ var permMap = map[permission]string{
 }
 
 // String returns a textual representation of the set of permissions
-func (p permission) String() string {
+func (p Permission) String() string {
 	var retString strings.Builder
 	for iterator, item := range permMap {
 		if (p & iterator) != 0 {

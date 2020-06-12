@@ -113,7 +113,7 @@ type PermanentFlags struct {
 // See: TPM-Main-Part-2-TPM-Structures_v1.2_rev116_01032011, P.140
 type nvAttributes struct {
 	Tag        uint16
-	Attributes permission
+	Attributes Permission
 }
 
 // NVDataPublic implements the structure of TPM_NV_DATA_PUBLIC
