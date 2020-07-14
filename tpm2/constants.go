@@ -347,6 +347,9 @@ var toGoCurve = map[EllipticCurve]elliptic.Curve{
 
 // Supported TPM operations.
 const (
+	// CmdNVUndefineSpaceSpecial is a command code TPM2_PolicyCommandCode.
+	// It's exported to be used with that.
+	CmdNVUndefineSpaceSpecial     tpmutil.Command = 0x0000011F
 	cmdEvictControl               tpmutil.Command = 0x00000120
 	cmdUndefineSpace              tpmutil.Command = 0x00000122
 	cmdClear                      tpmutil.Command = 0x00000126
@@ -368,30 +371,31 @@ const (
 	cmdReadLockNV                 tpmutil.Command = 0x0000014F
 	// CmdPolicySecret is a command code for TPM2_PolicySecret.
 	// It's exported for computing of default AuthPolicy value.
-	CmdPolicySecret     tpmutil.Command = 0x00000151
-	cmdCreate           tpmutil.Command = 0x00000153
-	cmdECDHZGen         tpmutil.Command = 0x00000154
-	cmdImport           tpmutil.Command = 0x00000156
-	cmdLoad             tpmutil.Command = 0x00000157
-	cmdQuote            tpmutil.Command = 0x00000158
-	cmdRSADecrypt       tpmutil.Command = 0x00000159
-	cmdSign             tpmutil.Command = 0x0000015D
-	cmdUnseal           tpmutil.Command = 0x0000015E
-	cmdContextLoad      tpmutil.Command = 0x00000161
-	cmdContextSave      tpmutil.Command = 0x00000162
-	cmdECDHKeyGen       tpmutil.Command = 0x00000163
-	cmdEncryptDecrypt   tpmutil.Command = 0x00000164
-	cmdFlushContext     tpmutil.Command = 0x00000165
-	cmdLoadExternal     tpmutil.Command = 0x00000167
-	cmdMakeCredential   tpmutil.Command = 0x00000168
-	cmdReadPublicNV     tpmutil.Command = 0x00000169
-	cmdReadPublic       tpmutil.Command = 0x00000173
-	cmdRSAEncrypt       tpmutil.Command = 0x00000174
-	cmdStartAuthSession tpmutil.Command = 0x00000176
-	cmdGetCapability    tpmutil.Command = 0x0000017A
-	cmdGetRandom        tpmutil.Command = 0x0000017B
-	cmdHash             tpmutil.Command = 0x0000017D
-	cmdPCRRead          tpmutil.Command = 0x0000017E
+	CmdPolicySecret      tpmutil.Command = 0x00000151
+	cmdCreate            tpmutil.Command = 0x00000153
+	cmdECDHZGen          tpmutil.Command = 0x00000154
+	cmdImport            tpmutil.Command = 0x00000156
+	cmdLoad              tpmutil.Command = 0x00000157
+	cmdQuote             tpmutil.Command = 0x00000158
+	cmdRSADecrypt        tpmutil.Command = 0x00000159
+	cmdSign              tpmutil.Command = 0x0000015D
+	cmdUnseal            tpmutil.Command = 0x0000015E
+	cmdContextLoad       tpmutil.Command = 0x00000161
+	cmdContextSave       tpmutil.Command = 0x00000162
+	cmdECDHKeyGen        tpmutil.Command = 0x00000163
+	cmdEncryptDecrypt    tpmutil.Command = 0x00000164
+	cmdFlushContext      tpmutil.Command = 0x00000165
+	cmdLoadExternal      tpmutil.Command = 0x00000167
+	cmdMakeCredential    tpmutil.Command = 0x00000168
+	cmdReadPublicNV      tpmutil.Command = 0x00000169
+	cmdPolicyCommandCode tpmutil.Command = 0x0000016C
+	cmdReadPublic        tpmutil.Command = 0x00000173
+	cmdRSAEncrypt        tpmutil.Command = 0x00000174
+	cmdStartAuthSession  tpmutil.Command = 0x00000176
+	cmdGetCapability     tpmutil.Command = 0x0000017A
+	cmdGetRandom         tpmutil.Command = 0x0000017B
+	cmdHash              tpmutil.Command = 0x0000017D
+	cmdPCRRead           tpmutil.Command = 0x0000017E
 	// CmdPolicyPCR is the command code for TPM2_PolicyPCR.
 	// It's exported for computing AuthPolicy values for PCR-based sessions.
 	CmdPolicyPCR       tpmutil.Command = 0x0000017F
